@@ -29,18 +29,24 @@ struct SideMenuView: View {
             }
             .padding(.leading)
             
-            ForEach(SideMenuViewModel.allCases, id: \.rawValue) { option in
-                HStack(spacing: 16) {
-                    Image(systemName: option.imageName)
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                    Text(option.title)
-                        .font(.subheadline)
+            ForEach(SideMenuViewModel.allCases, id: \.rawValue) { viewModel in
+                if viewModel == .profile {
+                    NavigationLink {
+                        ProfileView()
+                    } label: {
+                        SideMenuOptionRowView(viewModel: viewModel)
+                    }
+                } else if viewModel == .logout {
+                    Button {
+                        print("Handle logout her...")
+                    } label: {
+                        SideMenuOptionRowView(viewModel: viewModel)
+                    }
                     
-                    Spacer ()
+                } else {
+                    SideMenuOptionRowView(viewModel: viewModel)
                 }
-                .frame(height: 40)
-                .padding(.horizontal)
+
             }
             
             Spacer ()
