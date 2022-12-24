@@ -11,6 +11,7 @@ import FirebaseStorage
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: User?
+    @Published var didAuthenticateUser = false
     
     init() {
         self.userSession = Auth.auth().currentUser
@@ -39,7 +40,6 @@ class AuthViewModel: ObservableObject {
             }
             
             guard let user = result?.user else { return }
-            self.userSession = user
             
             print("DEBUG: Registered user successfully")
             print("DEBUG: User is \(self.userSession)")
@@ -52,7 +52,7 @@ class AuthViewModel: ObservableObject {
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data) { _ in
-                    print("DEBUG: Did upload user data..")
+                    self.didAuthenticateUser = true
                 }
         }
     }
