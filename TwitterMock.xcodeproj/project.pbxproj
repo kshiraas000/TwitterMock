@@ -10,7 +10,8 @@
 		692392562954F19C0076CF49 /* SideMenuOptionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692392552954F19C0076CF49 /* SideMenuOptionRowView.swift */; };
 		6923925B295513CA0076CF49 /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6923925A295513CA0076CF49 /* NewTweetView.swift */; };
 		6923925E295514BE0076CF49 /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6923925D295514BE0076CF49 /* TextArea.swift */; };
-		692F451C2957667C005B26D4 /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692F451B2957667C005B26D4 /* ProfilePhotoSelectorView.swift */; };
+		6949B9EC2957A43800A35E50 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6949B9EB2957A43800A35E50 /* ImagePicker.swift */; };
+		696968052958BF4F007C50B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696968042958BF4F007C50B6 /* UserService.swift */; };
 		698F82302954C68B00905AB6 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F822F2954C68B00905AB6 /* UserRowView.swift */; };
 		698F82362954DF4100905AB6 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F82352954DF4100905AB6 /* SideMenuView.swift */; };
 		698F823A2954DF7B00905AB6 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F82392954DF7B00905AB6 /* SideMenuViewModel.swift */; };
@@ -44,7 +45,8 @@
 		692392552954F19C0076CF49 /* SideMenuOptionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionRowView.swift; sourceTree = "<group>"; };
 		6923925A295513CA0076CF49 /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		6923925D295514BE0076CF49 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
-		692F451B2957667C005B26D4 /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
+		6949B9EB2957A43800A35E50 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		696968042958BF4F007C50B6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		698F822F2954C68B00905AB6 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 		698F82352954DF4100905AB6 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		698F82392954DF7B00905AB6 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6949B9EA2957A41900A35E50 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6949B9EB2957A43800A35E50 /* ImagePicker.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		698F822C2954C62E00905AB6 /* Views */ = {
@@ -182,7 +192,6 @@
 			children = (
 				69F5E287295608D6006102B2 /* LoginView.swift */,
 				69F5E289295608E3006102B2 /* RegistrationView.swift */,
-				692F451B2957667C005B26D4 /* ProfilePhotoSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +223,7 @@
 		69FE692F2953F22C00E40BEA /* TwitterMock */ = {
 			isa = PBXGroup;
 			children = (
+				6949B9EA2957A41900A35E50 /* Utils */,
 				69FE69412953F43000E40BEA /* Extensions */,
 				69FE69402953F42D00E40BEA /* Model */,
 				69FE693F2953F42900E40BEA /* Service */,
@@ -255,6 +265,7 @@
 		69FE693F2953F42900E40BEA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				696968042958BF4F007C50B6 /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -457,14 +468,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				69FE69572954022A00E40BEA /* MessagesView.swift in Sources */,
+				696968052958BF4F007C50B6 /* UserService.swift in Sources */,
 				69FE695B295404D100E40BEA /* ProfileView.swift in Sources */,
+				6949B9EC2957A43800A35E50 /* ImagePicker.swift in Sources */,
 				69FE69332953F22D00E40BEA /* ContentView.swift in Sources */,
 				69FE694A2953F5D900E40BEA /* TweetRowView.swift in Sources */,
 				69F275372956156E001B53AD /* CustomInputField.swift in Sources */,
 				69FE695D29540BD500E40BEA /* TweetFilterViewModel.swift in Sources */,
 				69FE69472953F51C00E40BEA /* FeedView.swift in Sources */,
 				69F2753A29561987001B53AD /* AuthHeaderView.swift in Sources */,
-				692F451C2957667C005B26D4 /* ProfilePhotoSelectorView.swift in Sources */,
 				698F82362954DF4100905AB6 /* SideMenuView.swift in Sources */,
 				69FE69312953F22D00E40BEA /* TwitterMockApp.swift in Sources */,
 				69FE6953295401E700E40BEA /* ExploreView.swift in Sources */,

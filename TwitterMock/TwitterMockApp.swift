@@ -21,6 +21,7 @@ struct TwitterMockApp: App {
         WindowGroup {
             NavigationView {
                 ContentView()
+                //ProfilePhotoSelectorView()
             }
             .environmentObject(viewModel)
         }

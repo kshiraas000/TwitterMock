@@ -13,10 +13,11 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: User?
     @Published var didAuthenticateUser = false
     
+    private let service = UserService()
+    
     init() {
         self.userSession = Auth.auth().currentUser
-        
-        print("DEBUG: User session is \(self.userSession?.uid)")
+        self.fetchUser()
     }
     
     func login(withEmail email: String, password: String) {
@@ -40,6 +41,7 @@ class AuthViewModel: ObservableObject {
             }
             
             guard let user = result?.user else { return }
+            self.userSession = user
             
             print("DEBUG: Registered user successfully")
             print("DEBUG: User is \(self.userSession)")
@@ -52,7 +54,7 @@ class AuthViewModel: ObservableObject {
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data) { _ in
-                    self.didAuthenticateUser = true
+                    print("DEBUG: Did upload user data..")
                 }
         }
     }
@@ -63,5 +65,11 @@ class AuthViewModel: ObservableObject {
         
         // signs user out on server
         try? Auth.auth().signOut()
+    }
+    
+    func fetchUser() {
+        guard let uid = self.userSession?.uid else { return }
+        
+        service.fetchUser(withUid: uid)
     }
 }
